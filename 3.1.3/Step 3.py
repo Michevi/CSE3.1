@@ -50,4 +50,3 @@ if fries_choice == "yes":
     fries_size = input("fries size")
     if fries_size == "small":
         print("would you like to mega size")
-        if yes
