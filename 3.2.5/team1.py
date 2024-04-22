@@ -4,7 +4,7 @@ my_history and their_history are strings of the same length, perhaps length zero
 
 import random
 
-strategy_name = "Beat last move if repeating"
+strategy_name = "cutting the paper"
 
 def beat_move(move):
     if (move=="r"):
@@ -18,7 +18,16 @@ def move(my_history, their_history):
     """This player always starts with rock
     """
     if (len(their_history) < 2):
-        return "r"
-    if (their_history[-1] == their_history[-2]):
-        return beat_move(their_history[-1])
+        return "p"
+    if (their_history[-2] == their_history[-1]):
+        return beat_move(their_history[-2])
+
+    if (len(their_history) < 7):
+        return "s"
+    if (their_history[-6] == their_history[-5]):
+        return beat_move(their_history[-3])
+
     return random.choice(["r", "p", "s"])
+
+
+
